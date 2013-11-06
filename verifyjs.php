@@ -192,8 +192,10 @@ if (isset($_GET['centre']) && isset($_GET['fid']) && isset($_GET['pid']) )
 }
 
 $qid_desc = get_qid_description($fid);
-$qid = $qid_desc['qid'];
-$description = $qid_desc['description'];
+if (isset($qid_desc['qid']))
+    $qid = $qid_desc['qid'];
+if (isset($qid_desc['description']))
+    $description = $qid_desc['description'];
 
 if (isset($_GET['complete']))
 {
